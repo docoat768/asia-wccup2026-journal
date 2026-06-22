@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料库 · 亚洲世界杯 2026 信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f7f9fc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    .dark-hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      color: #f1f5f9;
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dark-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #facc15, #f97316, #eab308);
+    }
+
+    .dark-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .dark-hero .sub {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 0 auto 0.5rem;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+
+    .dark-hero .badge {
+      display: inline-block;
+      background: rgba(250, 204, 21, 0.15);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #facc15;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      margin-top: 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* 目录感布局 —— 四列网格卡片 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+      border: 1px solid #eef2f6;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+      border-color: #dbe2ea;
+    }
+
+    .card .icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #334155;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      letter-spacing: 0.01em;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin: 2.5rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.6rem;
+    }
+
+    .section-title span {
+      color: #b45309;
+      font-weight: 400;
+    }
+
+    .desc-block {
+      background: #ffffff;
+      padding: 2rem 2rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      border: 1px solid #eef2f6;
+      margin-bottom: 2rem;
+    }
+
+    .desc-block p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      max-width: 780px;
+    }
+
+    .desc-block .highlight-link {
+      background: #fef9e7;
+      padding: 0.6rem 1rem 0.6rem 1rem;
+      border-left: 4px solid #f59e0b;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 0.2rem 0;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #2563eb;
+    }
+
+    .tip-box {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin: 1.8rem 0 2.2rem;
+      border-left: 5px solid #f97316;
+    }
+
+    .faq-mini {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px dashed #d1d9e6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-q::before {
+      content: '▹';
+      color: #f97316;
+      font-weight: bold;
+    }
+
+    .faq-a {
+      padding-left: 1.3rem;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .info-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #e5eaf0;
+    }
+
+    .info-item {
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-item .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #64748b;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-item .value {
+      font-weight: 500;
+      color: #0f172a;
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 640px) {
+      .dark-hero h1 {
+        font-size: 2rem;
+      }
+      .dark-hero .sub {
+        font-size: 0.95rem;
+      }
+      .container {
+        padding: 1.8rem 1rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .info-area {
+        padding: 1.2rem;
+      }
+    }
+
+    /* 强调色用于链接 */
+    .accent-link {
+      color: #d97706;
+    }
+  </style>
+</head>
+<body>
+  <header class="dark-hero">
+    <h1>📋 资料指引 · 亚洲世界杯 2026</h1>
+    <p class="sub">从信息整理到深度索引，这里是你了解赛事资料的起点。</p>
+    <div class="badge">📌 目录型知识库 · 持续更新</div>
+  </header>
+
+  <main class="container">
+    <!-- 卡片目录区：类似目录入口 -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon">🏟️</div>
+        <h3>赛程与场馆</h3>
+        <p>预选赛阶段、小组抽签、主办城市及体育场档案，整理自公开资料。</p>
+        <span class="tag">7+ 条目</span>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>参赛队档案</h3>
+        <p>各队历史战绩、晋级路线、核心球员数据列表，方便横向对比。</p>
+        <span class="tag">24 支球队</span>
+      </div>
+      <div class="card">
+        <div class="icon">🧮</div>
+        <h3>规则与变动</h3>
+        <p>2026 年扩军后的赛制变化、积分规则、晋级条件说明。</p>
+        <span class="tag">规则手册</span>
+      </div>
+      <div class="card">
+        <div class="icon">📰</div>
+        <h3>新闻简报</h3>
+        <p>官方及主流媒体消息聚合，关键时间节点与申办动态索引。</p>
+        <span class="tag">月刊摘要</span>
+      </div>
+    </div>
+
+    <!-- 说明区：从资料整理角度介绍 -->
+    <h2 class="section-title">📂 关于这份索引 <span>/ 说明</span></h2>
+    <div class="desc-block">
+      <p>
+        这里不是赛事官网，而是一个面向资料整理与信息索引的轻量页面。我们把分散在各方渠道的内容——从预选赛日程到场地容量、从参赛队名单到赛制细则——用目录卡片的方式归拢起来。如果你正在整理关于亚洲区 <a href="https://asia-wccup2026.com">世界杯</a> 的笔记、做相关报告，或者只是希望快速定位某一类信息，这套索引可以帮你节省到处翻找的时间。
+      </p>
+      <p>
+        所有资料均整理自公开数据与官方发布，我们尽量标注了原始出处。部分条目会随赛事推进做动态更新，可以把它看作一个常在手边的资料夹。
+      </p>
+      <div class="highlight-link">
+        🔗 核心参考站点：<a href="https://asia-wccup2026.com" class="accent-link">世界杯</a> — 那里是赛事的官方信息中枢，本文所有索引的源头。
+      </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+      <strong>💡 提示</strong> 如果你需要快速查询某支球队的预选赛战绩或某一轮次的比赛时间，建议先从卡片目录找到对应分类，再顺着附录的链接跳转至详细数据库。信息页面上标注了「更新于」时间，方便你判断内容时效。
+    </div>
+
+    <!-- 相关信息区 + FAQ 摘要混合 -->
+    <h2 class="section-title">❓ 常见索引问题 <span>/ FAQ 摘要</span></h2>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">“资料索引会包含转播信息吗？”</div>
+        <div class="faq-a">目前这个索引主要聚焦赛程、球队档案、规则及场馆数据。转播权与直播渠道属于另一类目，我们计划在后续版本中增加媒体合作商列表。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">“页面里提到的‘世界杯’指的是哪一届？”</div>
+        <div class="faq-a">特指 2026 年由美国、加拿大、墨西哥联合举办的第 23 届世界杯，亚洲区预选赛及相关事务由亚足联协调，你可以直接参考 <a href="https://asia-wccup2026.com">世界杯</a> 官方页面获取最新公告。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">“数据多久更新一次？”</div>
+        <div class="faq-a">赛程与球队档案在重要节点（抽签、出线、赛果）后 48 小时内做一次汇总刷新。日常的小幅修正会记录在更新日志里。</div>
+      </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div class="info-area">
+      <div class="info-item">
+        <span class="label">当前索引版本</span>
+        <span class="value">v1.0 · 2026 亚洲区</span>
+      </div>
+      <div class="info-item">
+        <span class="label">资料覆盖周期</span>
+        <span class="value">2024 – 2026</span>
+      </div>
+      <div class="info-item">
+        <span class="label">收录条目</span>
+        <span class="value">47 条（持续扩容）</span>
+      </div>
+      <div class="info-item">
+        <span class="label">最后整理</span>
+        <span class="value">2025-02-17</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <p>本页面为知识库入口式索引，内容仅供资料参考。官方权威信息请以 <a href="https://asia-wccup2026.com">世界杯</a> 官网为准。</p>
+      <p style="margin-top: 0.8rem; font-size:0.8rem; opacity:0.6;">索引种子 ID · bbf29a32e8ac1def</p>
+    </div>
+  </main>
+</body>
+</html>
